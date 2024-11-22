@@ -1,15 +1,18 @@
 'use client'
 import Container from "@/components/atoms/container"
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/atoms/form"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/atoms/form"
 import { Input } from "@/components/atoms/input"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Textarea } from "@/components/atoms/textarea"
 import { Button } from "@/components/atoms/button"
-import { SendHorizonalIcon } from "lucide-react"
+import { Send, SendHorizontalIcon } from "lucide-react"
 import { LinkPreview } from "@/components/atoms/link-preview"
 import { FaGithub, FaInstagramSquare, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { useState } from "react"
+import axios, { AxiosError } from "axios"
+import toast from "react-hot-toast"
 
 const mediaSocial = [
     {
@@ -29,7 +32,7 @@ const mediaSocial = [
     {
         id: 3,
         label: 'Instagram',
-        href: 'https ://www.instagram.com/kopallmuhamad/',
+        href: 'https://www.instagram.com/kopallmuhamad/',
         icon: FaInstagramSquare
     },
 
@@ -41,24 +44,41 @@ const mediaSocial = [
     }
 ]
 
-
 const formSchema = z.object({
     email: z.string().email(),
     message: z.string().min(6),
 })
 
 const Contact = () => {
+    const [loading, setLoading] = useState<boolean>(false);
+
     const form = useForm<z.infer<typeof formSchema>>({
         defaultValues: {
             email: '',
             message: '',
         },
         resolver: zodResolver(formSchema),
-    })
+    });
 
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-        console.log(data)
-    }
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+        setLoading(true);
+        try {
+            await axios.post("https://formspree.io/f/mkgwwpny", {
+                email: data.email,
+                message: data.message,
+            });
+            toast.success("Message sent successfully!");
+            form.reset();
+        } catch (error) {
+            if (error instanceof AxiosError && error.response) {
+                console.error(error.response.data);
+            } else {
+                console.error(error);
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <Container id="contact" className="pb-20">
@@ -69,7 +89,7 @@ const Contact = () => {
                 <ul className="pt-0 md:pt-5 space-y-2">
                     {mediaSocial.map((media) => (
                         <li key={media.id}>
-                            <LinkPreview url={media.href} className="flex items-center justify-between gap-x-4">
+                            <LinkPreview url={media.href} className="flex items-center justify-start md:justify-between gap-x-4">
                                 <span><media.icon size="30" /></span>
                                 <span className="text-base font-bold">{media.label}</span>
                             </LinkPreview>
@@ -81,7 +101,7 @@ const Contact = () => {
                         <h1 className="drop-shadow-xl">Get in touch with me</h1>
                     </header>
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} >
+                        <form action="https://formspree.io/f/movqlzvl" method="POST" onSubmit={form.handleSubmit(onSubmit)} >
                             <FormField
                                 control={form.control}
                                 name="email"
@@ -91,6 +111,7 @@ const Contact = () => {
                                         <FormControl>
                                             <Input type="email" placeholder="johndoe@example.com" {...field} />
                                         </FormControl>
+                                        <FormMessage />
                                     </FormItem>
                                 )}
                             />
@@ -103,10 +124,13 @@ const Contact = () => {
                                         <FormControl>
                                             <Textarea placeholder="Write your message..." {...field} />
                                         </FormControl>
+                                        <FormMessage />
                                     </FormItem>
                                 )}
                             />
-                            <Button className="mt-4">Send <SendHorizonalIcon /></Button>
+                            <Button type="submit" className="mt-4">
+                                Send {loading ? <Send /> : <SendHorizontalIcon />}
+                            </Button>
                         </form>
                     </Form>
                 </div>

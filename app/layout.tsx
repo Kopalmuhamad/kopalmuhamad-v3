@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavbarView from "@/components/views/navbar-view";
 import Footer from "@/components/views/footer-view";
-
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +19,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <Toaster />
         <NavbarView />
         {children}
         <Footer />
