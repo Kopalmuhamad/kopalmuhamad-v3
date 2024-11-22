@@ -1,4 +1,4 @@
-import { Button } from '@/components/atoms/button'
+import { Button, buttonVariants } from '@/components/atoms/button'
 import Container from '@/components/atoms/container'
 import OrbitingCircles from '@/components/atoms/orbiting-circles'
 import { ArrowRightCircle, SendHorizontalIcon } from 'lucide-react'
@@ -9,6 +9,8 @@ import { FaHtml5, FaCss3Alt, FaReact, FaBootstrap } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { SiExpress, SiRedux } from "react-icons/si";
 import { BiLogoMongodb } from "react-icons/bi";
+import Link from 'next/link'
+import { cn } from '@/utils/cn'
 
 const Hero = () => {
     return (
@@ -26,19 +28,19 @@ const Hero = () => {
                     </Button>
                 </div>
             </section>
-            <section className='pt-6 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 relative'>
+            <section className='pt-6 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 relative place-items-center md:place-items-start'>
                 <div>
                     <Image src={'/assets/kopal.jpg'} alt='hero' width={300} height={500} className='rounded-lg' />
                 </div>
-                <div className='backdrop-blur-[1px]'>
+                <div className='backdrop-blur-[1px] text-center md:text-start'>
                     <h1 className='text-xl font-bold'>Let me introduce myself</h1>
                     <p>I am a 22 year old, Frontend Developer who is passionate about building web applications. I have a strong background in web development.</p>
-                    <Button className='gap-x-4 mt-5' variant={"default"}>
+                    <Link href="#contact" className={cn(buttonVariants({ variant: "default" }), 'gap-x-4 mt-5')}>
                         Contact Me
                         <SendHorizontalIcon size={20} />
-                    </Button>
+                    </Link>
                 </div>
-                <div className="relative flex h-[400px] w-max pl-10 sm:px-20 md:px-20 flex-col items-center justify-center overflow-hidden md:absolute md:bottom-0 md:-z-50 md:right-10">
+                <div className="relative flex h-[400px] w-max pl-10 xs:px-20 flex-col items-center justify-center overflow-hidden md:absolute md:bottom-0 md:-z-50 md:right-10">
                     <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
                         Skills
                     </span>
