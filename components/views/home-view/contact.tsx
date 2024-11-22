@@ -61,7 +61,7 @@ const Contact = () => {
     }
 
     return (
-        <Container className="pb-20">
+        <Container id="contact" className="pb-20">
             <header className='text-4xl font-extrabold uppercase border-b border-border'>
                 Contact
             </header>

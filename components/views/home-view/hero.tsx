@@ -12,7 +12,7 @@ import { BiLogoMongodb } from "react-icons/bi";
 
 const Hero = () => {
     return (
-        <Container className='pb-20'>
+        <Container id="hero" className='pb-20'>
             <section className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 py-10'>
                 <div>
                     <p className='text-lg font-medium'>Hi 👋 I{"'"}m Kopal</p>

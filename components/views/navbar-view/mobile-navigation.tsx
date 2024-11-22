@@ -30,22 +30,22 @@ const MobileNavigation = () => {
                     <SheetTitle><Logo /></SheetTitle>
                     <Accordion type="single" collapsible>
                         <AccordionItem value="item-1">
-                            <Link className={accordionTriggerStyle} href="/">
+                            <Link className={accordionTriggerStyle} href="#hero">
                                 Home
                             </Link>
                         </AccordionItem>
                         <AccordionItem value="item-2">
-                            <Link className={accordionTriggerStyle} href="/about">
+                            <Link className={accordionTriggerStyle} href="#about">
                                 About
                             </Link>
                         </AccordionItem>
                         <AccordionItem value="item-3">
-                            <Link className={accordionTriggerStyle} href="/portfolio">
+                            <Link className={accordionTriggerStyle} href="#portfolio">
                                 Portfolio
                             </Link>
                         </AccordionItem>
                         <AccordionItem value="item-4">
-                            <Link className={accordionTriggerStyle} href="/contact">
+                            <Link className={accordionTriggerStyle} href="#contact">
                                 Contact
                             </Link>
                         </AccordionItem>

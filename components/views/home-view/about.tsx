@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <Container className='pb-20'>
+        <Container id='about' className='pb-20'>
             <header className='text-4xl font-extrabold uppercase border-b border-border'>
                 About
             </header>

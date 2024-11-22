@@ -43,7 +43,7 @@ const portfolios = [
 
 const Portfolio = () => {
     return (
-        <Container className='pb-20'>
+        <Container id='portfolio' className='pb-20'>
             <header className='text-4xl font-extrabold uppercase border-b border-border'>
                 Portfolio
             </header>
