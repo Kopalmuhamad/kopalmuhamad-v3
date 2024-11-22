@@ -21,7 +21,7 @@ const MobileNavigation = () => {
     return (
         <Sheet>
             <SheetTrigger className='md:hidden' asChild>
-                <Button variant={"outline"} rounded={"default"} size={"icon"}>
+                <Button variant={"outline"} size={"icon"}>
                     <MenuIcon />
                 </Button>
             </SheetTrigger>
