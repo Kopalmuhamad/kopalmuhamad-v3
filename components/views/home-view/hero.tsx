@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from '@/components/atoms/button'
+import { buttonVariants } from '@/components/atoms/button'
 import Container from '@/components/atoms/container'
 import OrbitingCircles from '@/components/atoms/orbiting-circles'
 import { ArrowRightCircle, SendHorizontalIcon } from 'lucide-react'
@@ -22,10 +22,10 @@ const Hero = () => {
                 </div>
                 <div className='space-y-2 flex items-start justify-end flex-col'>
                     <p>Discover my work and learn more about my professional services and qualifications</p>
-                    <Button variant={'outline'} size={"lg"} className='gap-x-4 rounded-full'>
+                    <Link href="#portfolio" className={cn(buttonVariants({ variant: "default", size: "lg" }), 'gap-x-4 mt-5')}>
                         <ArrowRightCircle />
                         See my work
-                    </Button>
+                    </Link>
                 </div>
             </section>
             <section className='pt-6 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 relative place-items-center md:place-items-start'>
