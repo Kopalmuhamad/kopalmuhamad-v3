@@ -24,13 +24,13 @@ const Hero = () => {
                     <p>Discover my work and learn more about my professional services and qualifications</p>
                     <Link href="#portfolio" className={cn(buttonVariants({ variant: "default", size: "lg" }), 'gap-x-4 mt-5')}>
                         <ArrowRightCircle />
-                        See my work
+                        See my works
                     </Link>
                 </div>
             </section>
             <section className='pt-6 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 relative place-items-center md:place-items-start'>
                 <div>
-                    <Image src={'/assets/kopal.jpg'} alt='hero' width={300} height={500} className='rounded-lg' />
+                    <Image src={'https://res-console.cloudinary.com/dtw7lls9f/thumbnails/v1/image/upload/v1732422335/cHJvZHVjdHMvdG5qempubGdlbWJ4bjFrZG5veGQ=/drilldown'} alt='hero' width={300} height={500} className='rounded-lg' />
                 </div>
                 <div className='backdrop-blur-[1px] text-center md:text-start'>
                     <h1 className='text-xl font-bold'>Let me introduce myself</h1>

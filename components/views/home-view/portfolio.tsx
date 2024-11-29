@@ -15,7 +15,7 @@ const portfolios = [
         title: "Excelent Car",
         "tect-stack": ["React", "Tailwind", "Express", "MongoDB", "NodeJS"],
         description: "Excelent Car is an Web Application for car rental. Create use React JS, Tailwind CSS, Express JS, MongoDB and Node JS. I work as a Fullstack Developer for this project.",
-        src: "/assets/smartmockups_m3pkyix5.jpg",
+        src: "https://res.cloudinary.com/dtw7lls9f/image/upload/v1732088835/cars/x5wjpywuxryejok5htmc.jpg",
         repoHref: "https://github.com/Kopalmuhamad/excelent-car-client",
         webHref: "https://excelent-car.vercel.app/"
     },
@@ -24,7 +24,7 @@ const portfolios = [
         title: "Movie List",
         "tect-stack": ["React", "Tailwind", "TMDB API"],
         description: "Movie List is an Web Application for movie. Create use React JS, Tailwind CSS and TMDB API. I work as a Frontend Developer for this project.",
-        src: "/assets/smartmockups_m3pku1q2.jpg",
+        src: "https://res.cloudinary.com/dtw7lls9f/image/upload/v1732088723/cars/m5wbtqifsbf4ocstrnol.jpg",
         repoHref: "https://github.com/Kopalmuhamad/movie-list-kopal",
         webHref: "https://movie-list-kopal.vercel.app/"
 
@@ -34,7 +34,7 @@ const portfolios = [
         title: "Petpal App",
         "tect-stack": ["React", "Tailwind", "Golang"],
         description: "Petpal App is an Web Application for pet. Create use React JS, Tailwind CSS, Create use ReactJS, Tailwind CSS, and my backend team use golang for create API. I work as a Frontend Developer for this project. Petpal app create for helping people take care their Pet with provides utilities and services for pets.",
-        src: "/assets/smartmockups_m3pkts1c.jpg",
+        src: "https://res.cloudinary.com/dtw7lls9f/image/upload/v1732088735/cars/jwpj1jtq0bxqr7sihp0o.jpg",
         repoHref: "https://github.com/Kopalmuhamad/Petpal-App",
         webHref: "https://petpal-nu.vercel.app/"
     }

@@ -1,8 +1,8 @@
 import { buttonVariants } from '@/components/atoms/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/atoms/card'
+import { LinkPreview } from '@/components/atoms/link-preview'
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 
 interface IPortfolio {
@@ -45,8 +45,12 @@ const PortfolioCard = ({ portfolio }: IProps) => {
                 </p>
             </CardContent>
             <CardFooter className='space-x-4'>
-                <Link href={portfolio.repoHref} className={cn(buttonVariants())}>View Repo</Link>
-                <Link href={portfolio.webHref} className={cn(buttonVariants({ variant: "secondary" }))}>View Web</Link>
+                <LinkPreview url={portfolio.repoHref} className={cn(buttonVariants(), "flex items-center justify-start md:justify-between gap-x-4")}>
+                    View Repo
+                </LinkPreview>
+                <LinkPreview url={portfolio.webHref} className={cn(buttonVariants({ variant: "secondary" }), "flex items-center justify-start md:justify-between gap-x-4")}>
+                    View Web
+                </LinkPreview>
             </CardFooter>
         </Card>
     )

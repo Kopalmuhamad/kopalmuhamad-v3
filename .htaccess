@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On RewriteBase / # Jangan redirect jika file, folder, atau
+  symbolic link ada RewriteCond %{REQUEST_FILENAME} !-f RewriteCond
+  %{REQUEST_FILENAME} !-d RewriteCond %{REQUEST_FILENAME} !-l # Redirect semua
+  request lain ke index.html RewriteRule ^(.*)$ /index.html [L]
+</IfModule>
